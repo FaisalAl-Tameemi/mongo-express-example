@@ -1,0 +1,41 @@
+
+// sass has variables
+$my_blue: #2980b9;
+$my_green: #27ae60;
+
+h2{
+  color: $my_green;
+}
+
+h3{
+  color: $my_blue;
+}
+
+// Sass supports nesting as well
+// Let's say we wanted to style as `li` elements within a `ul` having the class `my-list`
+ul.my-list{
+  // UL styles go here
+  list-style: none;
+
+  li{
+    // LI styles go here
+    font-weight: lighter;
+    color: $my_blue;
+  }
+}
+
+// you can also import other SASS files
+@import 'base';
+
+
+// And reusable mixins, kinda like functions in JS
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+     -moz-border-radius: $radius;
+      -ms-border-radius: $radius;
+          border-radius: $radius;
+}
+
+.box {
+  @include border-radius(10px);
+}
